@@ -1,1 +1,8 @@
-<%= @parsed_response %>
+<h2>Статус сервера:</h2>
+<% if @parsed_response["status"] == true %>
+	<p style="background-color:green;">ONLINE</p>
+	<h2>Игроки Онлайн:</h2>
+	<%= @parsed_response["players"]["online"] %>
+<% else %>
+<%= raw "<p style=\"background-color:red;\">OFFLINE</p>" %>
+<% end %>
